@@ -1,0 +1,9 @@
+name: main
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  step1:
+    uses: ./.github/workflows/sub.yml
+    secrets: inherit
