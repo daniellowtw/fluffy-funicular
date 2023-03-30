@@ -2,8 +2,18 @@ name: main
 
 on:
   workflow_dispatch: {}
+  pull_request:
+    types: [ labeled ]
 
 jobs:
   job1:
     uses: ./.github/workflows/sub.yml
     secrets: inherit
+
+
+  job2:
+    if: ${{ github.event.label.name == 'bug' }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run a one-line script
+      run: echo Hello, world!
