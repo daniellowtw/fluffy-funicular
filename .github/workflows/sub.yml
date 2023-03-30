@@ -5,7 +5,10 @@ on:
   workflow_call: {}
 
 jobs:
-  step1:
-    env:
-      F: ${{ secrets.FOO }}
-    run: env
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        env:
+          F: ${{ secrets.FOO }}
+        run: env
