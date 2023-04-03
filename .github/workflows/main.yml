@@ -8,6 +8,8 @@ on:
 
 jobs:
   job1:
+    env:
+      BAR: 123
     uses: ./.github/workflows/sub.yml
     secrets: inherit
     steps:

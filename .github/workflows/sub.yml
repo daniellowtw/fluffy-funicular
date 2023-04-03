@@ -12,4 +12,7 @@ jobs:
       - name: step1
         env:
           F: ${{ secrets.FOO }}
-        run: echo $F
+        run: |
+          set -x
+          echo $F
+          echo $BAR
