@@ -12,9 +12,6 @@ jobs:
       BAR: 123
     uses: ./.github/workflows/sub.yml
     secrets: inherit
-    steps:
-    - name: additional
-      run: echo foo
 
 
   job2:
