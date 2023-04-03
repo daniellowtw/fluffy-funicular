@@ -5,16 +5,17 @@ on:
   pull_request: {}
   label:
     types: [created]
+env:
+  BAR: 123
 
 jobs:
   job1:
     uses: ./.github/workflows/sub.yml
     secrets: inherit
 
-
   job2:
     if: contains(github.event.pull_request.labels.*.name, 'bug')
     runs-on: ubuntu-latest
     steps:
     - name: Run a one-line script
-      run: echo Hello, world!
+      run: echo Hello, world! $BAR
